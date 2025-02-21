@@ -1,0 +1,126 @@
+.grid-container {
+    display: grid; /* definir grid*/
+    gap: 10px;
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    /*border: 1px solid #ccc;**/
+}
+
+.container {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 3fr 1fr;
+}
+
+.item-container {
+    padding: 5px;
+    /*border: 1px solid #ccc;**/
+}
+
+.piezas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: aquamarine;
+    /*border: 1px solid #ccc;**/
+}
+
+.piezas-item {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+
+
+/* h1 con font google */
+h1{
+    font-family: "Lato", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* h2 con font google */
+h2{
+    font-family: "Lato", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* parrafos con font google */
+p{
+    font-family: "Lato", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* dimensión imagen principal */
+#img-home{
+    height: 250px;
+    width: 600px;
+}
+
+/* dimensión imagen taller */
+#img-taller{
+    height: 350px;
+    width: 350px;
+}
+
+#img-destacado{
+    height: 100px;
+    width: 100px;
+}
+
+/* dimensión imagen joyas */
+#img-anillos{
+    height: 350px;
+    width: 350px;
+}
+
+/* dimensión imagen piezas */
+#img-porcelana{
+    height: 250px;
+    width: 350px;
+}
+
+/* imprime menu horizontal */
+.menu-superior li{
+    display: inline;
+}
+
+/* dimension imagen de articulo */
+.img-article{
+    height: 150px;
+    width: 150px;
+}
+
+/* margenes etiqueta li */
+li{
+    margin: 10px;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* pseudoclases en form*/
+
+/* solicitando input requeridos*/
+input[type=text]:required{
+    background-color: red;
+}
+
+/* validando email*/
+input[type=email]:invalid{
+    background-color: red;
+}
