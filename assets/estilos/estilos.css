@@ -1,126 +1,129 @@
-.grid-container {
-    display: grid; /* definir grid*/
-    gap: 10px;
-}
-
-.grid-item {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    /*border: 1px solid #ccc;**/
-}
-
+@charset "UTF-8";
 .container {
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 3fr 1fr;
+  display: grid;
+  grid-template-columns: 1 auto auto;
+  background-color: #f3f3f3;
+  padding: 5px;
 }
 
-.item-container {
+.responsive-img-principal {
+  width: 50%;
+  max-height: 40%;
+}
+
+.card-img {
+  width: 50%;
+  max-height: 50%;
+}
+
+.container > div {
+  background-color: #f3f3f3;
+  padding: 5px;
+  text-align: center;
+}
+
+/* responsive grupo cards*/
+* {
+  box-sizing: border-box;
+}
+
+/* nesting */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.flex-container .flex-item-left {
+  background-color: #f3f3f3;
+  padding: 5px;
+  flex: 50%;
+}
+.flex-container .flex-item-right {
+  background-color: #f3f3f3;
+  padding: 5px;
+  flex: 50%;
+}
+
+/*   
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.flex-item-left {
+    background-color: $back-color;
     padding: 5px;
-    /*border: 1px solid #ccc;**/
+    flex: 50%;
 }
 
-.piezas-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    background-color: aquamarine;
-    /*border: 1px solid #ccc;**/
-}
-
-.piezas-item {
-    border: 1px solid black;
+.flex-item-right {
+    background-color: $back-color;
     padding: 5px;
-    margin: 5px;
+    flex: 50%;
+}*/
+/* Responsive cards cursos */
+@media (max-width: 800px) {
+  .flex-item-right, .flex-item-left {
+    flex: 100%;
+  }
+}
+h1 {
+  font-size: 1.5rem;
 }
 
-.footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+p {
+  font-size: 1rem;
 }
 
-
-
-
-/* h1 con font google */
-h1{
-    font-family: "Lato", serif;
-    font-weight: 700;
-    font-style: normal;
+/* Centra el contenido horizontalmente */
+.menu-container {
+  text-align: center;
 }
 
-/* h2 con font google */
-h2{
-    font-family: "Lato", serif;
-    font-weight: 300;
-    font-style: normal;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  display: inline-block; /* Permite centrar el ul */
 }
 
-/* parrafos con font google */
-p{
-    font-family: "Lato", serif;
-    font-weight: 300;
-    font-style: normal;
+li {
+  display: inline-block; /* Alinea los elementos en línea */
 }
 
-/* dimensión imagen principal */
-#img-home{
-    height: 250px;
-    width: 600px;
+li a {
+  display: block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-/* dimensión imagen taller */
-#img-taller{
-    height: 350px;
-    width: 350px;
+li a:hover:not(.active) {
+  background-color: #ddd;
 }
 
-#img-destacado{
-    height: 100px;
-    width: 100px;
+/* keyframe animacion icono*/
+.icono-em {
+  width: 40px;
+  height: 40px;
+  background-image: url("../img/home.svg");
+  background-repeat: no-repeat;
+  position: relative;
+  animation: moverIcono 1s alternate; /* Aplica la animación */
 }
 
-/* dimensión imagen joyas */
-#img-anillos{
-    height: 350px;
-    width: 350px;
+@keyframes moverIcono {
+  0% {
+    left: 0; /* Posición inicial */
+  }
+  100% {
+    left: calc(100% - 100px); /* Posición final */
+  }
 }
 
-/* dimensión imagen piezas */
-#img-porcelana{
-    height: 250px;
-    width: 350px;
-}
-
-/* imprime menu horizontal */
-.menu-superior li{
-    display: inline;
-}
-
-/* dimension imagen de articulo */
-.img-article{
-    height: 150px;
-    width: 150px;
-}
-
-/* margenes etiqueta li */
-li{
-    margin: 10px;
-    list-style-type: none;
-}
-
-a{
-    text-decoration: none;
-}
-
-/* pseudoclases en form*/
-
-/* solicitando input requeridos*/
-input[type=text]:required{
-    background-color: red;
-}
-
-/* validando email*/
-input[type=email]:invalid{
-    background-color: red;
-}
+/*# sourceMappingURL=estilos.css.map */
