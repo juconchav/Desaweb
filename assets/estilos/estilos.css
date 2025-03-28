@@ -1,4 +1,6 @@
 @charset "UTF-8";
+/* importa codigos de colores disponibles */
+/* inicio contenedor responsivo */
 .container {
   display: grid;
   grid-template-columns: 1 auto auto;
@@ -16,12 +18,19 @@
   max-height: 50%;
 }
 
+/*
+.container > div {
+    background-color: $back-color;
+    padding: 5px;
+    text-align: center;
+}*/
 .container > div {
   background-color: #f3f3f3;
   padding: 5px;
   text-align: center;
 }
 
+/* fin contenedor responsivo*/
 /* responsive grupo cards*/
 * {
   box-sizing: border-box;
@@ -68,14 +77,39 @@
     flex: 100%;
   }
 }
+/* inicio seteo fuentes*/
 h1 {
   font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* definición propiedades h3 */
+.h3-class, .h3-class-cursivo {
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
   font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+label {
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* extend aplicado en el único h3 cursivo (pagina de talleres) */
+.h3-class-cursivo {
+  font-style: italic;
+}
+
+/* fin seteo fuentes*/
 /* Centra el contenido horizontalmente */
 .menu-container {
   text-align: center;
@@ -91,26 +125,38 @@ ul {
   display: inline-block; /* Permite centrar el ul */
 }
 
+/* Alinea los elementos en línea */
 li {
-  display: inline-block; /* Alinea los elementos en línea */
+  display: inline-block;
 }
 
+/* estilos "a" */
 li a {
   display: block;
   color: #666;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* aplica hover a menu y footer*/
 li a:hover:not(.active) {
-  background-color: #ddd;
+  color: #943DFF;
+  font-style: bold;
+  text-decoration: underline;
 }
 
-/* keyframe animacion icono*/
+/* opacidad y cursor en imagenes*/
+.card-img:hover {
+  filter: opacity(0.5);
+  cursor: pointer;
+}
+
+/* inicio keyframe animacion */
 .icono-em {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: 25px;
   background-image: url("../img/home.svg");
   background-repeat: no-repeat;
   position: relative;
@@ -125,5 +171,21 @@ li a:hover:not(.active) {
     left: calc(100% - 100px); /* Posición final */
   }
 }
+/* fin keyframe animacion */
+/* estilos boton contacto*/
+.contacto-button {
+  padding: 10px 20px;
+  background-color: #943DFF;
+  color: #f3f3f3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contacto-button:hover {
+  background-color: #666;
+}
+
+/* fin estilos boton*/
 
 /*# sourceMappingURL=estilos.css.map */

@@ -1,6 +1,7 @@
-
+/* importa codigos de colores disponibles */
 @import "colores";
 
+/* inicio contenedor responsivo */
 .container {
     display: grid;
     grid-template-columns: 1 auto auto;
@@ -17,13 +18,26 @@
     width: 50%;
     max-height: 50%;
 }
-
+/*
 .container > div {
     background-color: $back-color;
     padding: 5px;
     text-align: center;
+}*/
+
+// Definición de mixin con parámetros para div
+@mixin container-div-styles($back-color, $padding-div, $text-align-div) {
+    background-color: $back-color;
+    padding: $padding-div;
+    text-align: $text-align-div;
 }
 
+// Uso de mixin en div
+.container > div {
+    @include container-div-styles($back-color, 5px, center);
+}
+
+/* fin contenedor responsivo*/
 
 /* responsive grupo cards*/
 * {
@@ -73,15 +87,42 @@
     }
 }
 
+/* inicio seteo fuentes*/
 h1 {
     font-size:1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h2 {
+    font-size:1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* definición propiedades h3 */
+.h3-class {
+    font-size:1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
     font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-  /* Centra el contenido horizontalmente */
+label {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* extend aplicado en el único h3 cursivo (pagina de talleres) */
+.h3-class-cursivo {
+    @extend .h3-class;
+    font-style: italic;
+}
+
+/* fin seteo fuentes*/
+
+/* Centra el contenido horizontalmente */
 .menu-container {
     text-align: center; 
 }
@@ -91,31 +132,43 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #e7e7e7;
+    border: 1px solid $ul-border-color;
     background-color: $back-color;
     display: inline-block; /* Permite centrar el ul */
 }
 
+/* Alinea los elementos en línea */
 li {
-    display: inline-block; /* Alinea los elementos en línea */
+    display: inline-block; 
 }
 
+/* estilos "a" */
 li a {
     display: block;
-    color: #666;
+    color: $back-a-color;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* aplica hover a menu y footer*/
 li a:hover:not(.active) {
-    background-color: #ddd;
+    color: $hover-color;
+    font-style: bold;
+    text-decoration: underline;
 }
 
-/* keyframe animacion icono*/
+/* opacidad y cursor en imagenes*/
+.card-img:hover {
+    filter: opacity(.5);
+    cursor: pointer;
+}
+
+/* inicio keyframe animacion */
 .icono-em {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     background-image: url("../img/home.svg");
     background-repeat: no-repeat;
     position: relative;
@@ -130,4 +183,19 @@ li a:hover:not(.active) {
         left: calc(100% - 100px); /* Posición final */
     }
 }
+/* fin keyframe animacion */
 
+/* estilos boton contacto*/
+.contacto-button {
+    padding: 10px 20px;
+    background-color: $hover-color;
+    color: $back-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contacto-button:hover {
+    background-color: $back-a-color;
+}
+/* fin estilos boton*/
